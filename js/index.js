@@ -23,6 +23,7 @@ function eachButton(id,category_name){
 }
 
 const eachNewsPortal= (eachNews,category_name)=>{
+  isLoding(true);
   const footer=document.getElementById('footer');
   // Take Found 
   const found=document.getElementById('found');
@@ -37,7 +38,7 @@ const eachNewsPortal= (eachNews,category_name)=>{
   }
   const newShow=document.getElementById('newShow');
   newShow.innerHTML='';
-  for(let eachNewshow of eachNews){
+  eachNews.forEach(eachNewshow=>{
   const div=document.createElement('div');
   const newShow=document.getElementById('newShow');
   div.innerHTML=`
@@ -82,9 +83,13 @@ const eachNewsPortal= (eachNews,category_name)=>{
       </div>
     </div>
   </div>`
-newShow.appendChild(div);
-} 
+  newShow.appendChild(div);
+  });
+  isLoding(false);
 }
+
+
+
 
 function moreDetails(clickId){
   const url2=`https://openapi.programming-hero.com/api/news/${clickId}`
@@ -107,4 +112,15 @@ function modalShow(datas){
     `
     console.log(data);
 }
+}
+
+function isLoding(isloding){
+  const spiner=document.getElementById('spiner');
+  if(isloding){
+    spiner.classList.remove('d-none');
+  }
+  else{
+    spiner.classList.add('d-none');
+
+  }
 }
