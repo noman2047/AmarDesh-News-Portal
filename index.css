@@ -6,3 +6,7 @@
 #navbarText ul li{
   margin-left:10px;
 }
+
+.newsAndBlog:hover{
+  background-color: blanchedalmond;
+}
