@@ -1,8 +1,9 @@
 // All news 
-const url='https://openapi.programming-hero.com/api/news/categories'
-fetch(url)
-.then(req=>req.json())
-.then(allnews=>allNewsCata(allnews.data.news_category))
+const url='https://openapi.programming-hero.com/apis/news/categories'
+  fetch(url)
+  .then(req=>req.json())
+  .then(allnews=>allNewsCata(allnews.data.news_category))
+  .catch(error=>console.log(error));
 
 const allNewsCata = allnews=>{
   for(let eachNewsCat of allnews){
