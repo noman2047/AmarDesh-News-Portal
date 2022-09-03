@@ -1,0 +1,8 @@
+#navbarText{
+  display: flex;
+  justify-content:space-around;
+  font-size: 18px;
+}
+#navbarText ul li{
+  margin-left:10px;
+}
